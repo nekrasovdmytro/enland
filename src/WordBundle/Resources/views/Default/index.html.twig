@@ -1,5 +1,11 @@
 {% extends 'base.html.twig' %}
 
+{% block javascripts %}
+    {% javascripts '@WordBundle/Resources/public/js/*/*/*.js' %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}
+
 {% block stylesheets %}
     {% stylesheets '@WordBundle/Resources/public/css/*' filter='cssrewrite' %}
     <link rel="stylesheet" href="{{ asset_url }}" />
@@ -7,9 +13,20 @@
 {% endblock %}
 
 {% block body %}
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+    <div class="row">
+        <div class="col-md-8">
+            <h1>{% trans %}ru-en{% endtrans %}</h1>
+        </div>
+        <div class="col-md-4">
+            <blockquote>{% trans %}main-page-learn-english{% endtrans %}</blockquote>
+
+        </div>
+    </div>
     <div class="row">
         <div class="col-md-12">
-            <h1>{% trans %}ru-en{% endtrans %}</h1>
             <hr>
         </div>
     </div>
@@ -17,17 +34,33 @@
         <div class="col-md-12">
             <div class="row">
             {% for w in words %}
-                <div class="col-md-3">
-                <a href="/word/{{ w.translate | lower | replace({' ' : '_'}) }}">{{ w.translate | capitalize }}</a>
+                <div class="col-md-3 page-list">
+                <a class="list-word" image="{{ w.image }}" href="/word/{{ w.translate | lower | replace({' ' : '_'}) }}">{{ w.translate | capitalize }}</a>
 
                     {{ w.transcription | raw }}
 
                     - {{ w.word | lower }}
 
+                    <a style="font-size:10px" onclick='var newWin = window.open("https://translate.google.com/#en/ru/{{ w.translate | lower }}",
+                            "JSSite",
+                            "width=800,height=auto,resizable=yes,scrollbars=yes,status=yes"
+                            )
+
+                            newWin.focus()
+                            ' id="gtranslate-btn" type="button" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></a>
 
                 </div>
             {% endfor %}
             </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-10">
+
+        </div>
+        <div class="col-md-2">
+            <br>
+            Learn 30 words everyday
         </div>
     </div>
     <div class="row">
@@ -103,6 +136,22 @@
 
     </div>
 
+<script>
+    $(function(){
 
+        $( document ).tooltip({
+            items: "a.list-word",
+            content: function() {
+                var element = $( this );
+                    var text = element.attr('image');
+                    return "<img width='250px' alt='" + text +
+                            "' src='http://learn.lviniy-web.org/Upload/" +
+
+                            text + "'>";
+
+            }
+        });
+    })
+</script>
 
 {% endblock %}
