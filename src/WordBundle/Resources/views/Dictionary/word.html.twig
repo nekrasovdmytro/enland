@@ -1,0 +1,461 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ seo.getTitle() }}{% endblock %}
+{% block description %}{{ seo.getDescription() }}{% endblock %}
+{% block keywords %}{{ seo.getKeywords() }}{% endblock %}
+
+{% block javascripts %}
+    {% javascripts '@WordBundle/Resources/public/js/*/*/*.js' %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}
+
+{% block stylesheets %}
+    {% stylesheets '@WordBundle/Resources/public/css/*' filter='cssrewrite' %}
+    <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock %}
+
+
+{% block body %}
+
+    {% set isHeaderImage = 0 %}
+    <div class="row start-page">
+
+                    {% if current is not empty %}
+                    {% if current.image is not empty %}
+                        <div class="col-md-2">
+                        {% set isHeaderImage = 1 %}
+                        <img data-original="http://learn.lviniy-web.org/Upload/{{ current.image }}" class="lazy img-thumbnail word-image" />
+                        </div>
+                    {% endif %}
+                    {% endif %}
+
+
+
+        <div class="col-md-{% if isHeaderImage %}4{% else %}6{% endif %}">
+            <h1>{{ word | capitalize }} | <span class="little-span">{% trans %}Translation / transcription / pronunciation{% endtrans %}</span></h1>
+
+            {% if current is not empty %}
+                {{ current.transcription | raw }}
+                {{ current.word }}
+            {% endif %}
+            <div class="row">
+                <div class="col-md-12">
+                    <hr/>
+                    <button onclick='var newWin = window.open("https://translate.google.com/#en/ru/{{ word }}",
+                    "JSSite",
+                    "width=800,height=auto,resizable=yes,scrollbars=yes,status=yes"
+                    )
+
+                    newWin.focus()
+                    ' id="gtranslate-btn" type="button" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> Google Translate</button>
+                    {% if current is not empty %}
+                    <button id="learn-btn" type="button" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-cloud-upload" aria-hidden="true"></span> {% trans %}Learn it{% endtrans %} </button>
+                    {% endif %}
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-12">
+                    <ol class="breadcrumb">
+                        <li><a href="/">{% trans %}Home{% endtrans %}</a></li>
+                        <li><a href="/dictionary/{{ lang }}/{{ key | lower }}">{% trans %}Words on letter{% endtrans %} {{ key|upper}}</a></li>
+                        <li class="active">{{ word|capitalize }}</li>
+                    </ol>
+                </div>
+            </div>
+	    <div class="row">
+		<div class="col-md-12">
+			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- city -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:100%; height:90px"
+     data-ad-client="ca-pub-6448372095392587"
+     data-ad-slot="2109205753"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+		</div>
+	    </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <hr class="underline">
+        </div>
+    </div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>{% trans %}Popular phrases with{% endtrans %} <span class="word-red">{{ word }}</span> </h2>
+            </div>
+        </div>
+        <div class="row">
+
+
+            {% set lastcolor = '' %}
+            {% for w in words %}
+                <div class="col-md-6" ><a href="/word/{{ w.translate | lower | replace({' ' : '_'}) }}"
+                    {% if w.color is defined %}style="border-bottom: 2px solid rgb({{ w.color }})"{% endif %}>
+                        {% if w.translate == word %}
+                        <b>{{ w.translate | capitalize  }}</b>
+                        {% else %}
+                            {{ w.translate | capitalize  }}
+                        {% endif %}
+
+                    </a> <var class="transcription">{{ w.transcription | raw }}</var> -
+
+                    {% if current is not empty %}
+                        {% if current.data is not empty %}
+                                {% set flag = 0 %}
+                                {% set doubleflag = 0 %}
+
+                                {% if w.color is defined %}
+                                    {% if w.color == lastcolor  %}
+                                        {% set doubleflag = 1 %}
+                                    {% endif %}
+
+                                    {% set lastcolor = w.color %}
+                                {% endif %}
+
+
+                                {% if doubleflag %}
+                                    {% for d in current.data %}
+                                        {% if w.translate == d.0 %}
+                                            {{ d.1 }}
+                                            {% set flag = 1 %}
+                                        {% endif %}
+                                    {% endfor %}
+
+                                    {% if not flag %}
+                                        {{ w.word | capitalize }}
+                                    {% endif %}
+                                {% else %}
+                                    {{ w.word | capitalize }}
+                                {% endif %}
+
+                        {% else %}
+                            {{ w.word | capitalize }}
+                        {% endif %}
+                    {% else %}
+                        {{ w.word | capitalize }}
+                    {% endif %}
+
+
+
+
+                </div>
+            {% endfor %}
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <hr>
+            </div>
+        </div>
+        {% if words.0.image is defined and words.0.image is not empty %}
+        <div class="row">
+            <div class="col-md-12">
+                <h2>{% trans %}Images for word{% endtrans %} <span class="word-red">{{ word }}</span> </h2>
+            </div>
+        </div>
+        {% endif %}
+
+        <div class="row">
+            <div class="col-md-12 images-same">
+
+                {% set lastimage = '' %}
+                {% set countIndex = 0 %}
+                {% for w in words %}
+                    {% if w.image is not empty %}
+                        {% set doubleimage = 0 %}
+
+                        {% if w.image is defined %}
+                            {% if w.image == lastimage  %}
+                                {% set doubleimage = 1 %}
+                            {% endif %}
+
+                            {% set lastimage = w.image %}
+                        {% endif %}
+
+                        {% if not doubleimage %}
+                            {% set countIndex = countIndex + 1 %}
+                            <a title="{{ w.translate }} - {{ w.word }}" href="/word/{{ w.translate | lower | replace({' ' : '_'}) }}" ><img class="lazy img-thumbnail" data-original="http://learn.lviniy-web.org/Upload/{{ w.image }}" title="{{ w.translate }} - {{ w.word }}" width="125px" /></a>
+
+                        {% endif %}
+
+
+                    {% endif %}
+                {% endfor %}
+
+                {% if countIndex > 5 %}
+                <button id="showmore-images" class="btn btn-primary" type="button">
+                        Show more <span class="badge">{{ countIndex - 4 }}</span>
+                    </button>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>{% trans %}Texts with word{% endtrans %} <span class="word-red">{{ word }}</span> </h2>
+            </div>
+        </div>
+
+        {% for t in text %}
+            <div class="row">
+                <div book="{{ t.book }}" location="{{ t.location }}" class="col-md-3">
+                    Bible : {{ t.book}}<br>{{ t.location }} <br>
+                    <button type="button" class="get-rus-translation  btn btn-success btn-xs">{% trans %}Translate{% endtrans %}</button>
+                </div>
+                <div class="col-md-9">
+                    {% set replacment = "<span class='label label-success'>" ~ word ~ "</span>" %}
+                    {% for el in t.elements %}
+                            {{ el.text }}
+                    {% endfor %}
+                    <hr>
+                </div>
+            </div>
+        {% endfor %}
+
+        {% if usertextes is not empty %}
+            <hr/>
+        <div class="row">
+            <div class="col-md-12" id='user-texts-added'>
+                {% for uw in usertextes %}
+                <div class="row">
+                    <div class="col-md-6">{{ uw.words }}</div>
+                    <div class="col-md-6">{{ uw.translate }}</div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+
+        <div class="row">
+            <div class="col-md-12">
+                <hr>
+                <p><b>{% trans %}Add example yet{% endtrans %}</b></p>
+                <form id="add-user-words" class="form-inline">
+                    <div class="form-group">
+                        <input type="hidden" name="word" value="{{ word }}" />
+                        <div class="input-group">
+                            <div class="input-group-addon "><span class=" glyphicon glyphicon-text-background"></span></div>
+                            <textarea type="text" class="form-control" name="text" placeholder="{% trans %}Text{% endtrans %}"></textarea>
+                        </div>
+
+                        <div class="input-group">
+                            <div class="input-group-addon "><span class=" glyphicon glyphicon-text-background"></span></div>
+                            <textarea type="text" class="form-control" name="translation" placeholder="{% trans %}Translation{% endtrans %}"></textarea>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">{% trans %}Add{% endtrans %}</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <hr/>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+    <div class="row">
+        <div class="col-md-12 header-line">
+            {% trans %}Another notices{% endtrans %}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <hr>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+            {% include 'WordBundle:Note:notices_bootstrap.html.twig' with {'notice': notices, 'col':'3'} %}
+            </div>
+        </div>
+    </div>
+    <script>
+
+        var LearnIt = function () {
+            var blockId = 'learn-it-block';
+            var interval = 1500;
+            var index = 0;
+
+            function getCol(number) {
+                return $('<div/>', {
+                    'class' : 'col-md-' + number.toString()
+                });
+            }
+
+            function getRow(id) {
+                return $('<div/>', {
+                    class : 'row',
+                    id:id
+                });
+            }
+
+            this.changeColors = function()
+            {
+                var color1 = getRandomColor();
+                var color2 = getRandomColor();
+
+                $('#' + blockId).find('.col-md-6:eq(0)').css({background:color1});
+                $('#' + blockId).find('.col-md-6:eq(1)').css({background:color2});
+
+                if (interval > 300)
+                    interval = interval - 150;
+            }
+
+            function getRandomColor() {
+                var letters = '0123456789ABCDEF'.split('');
+                var color = '#';
+                for (var i = 0; i < 6; i++ ) {
+                    color += letters[Math.floor(Math.random() * 16)];
+                }
+                return color;
+            }
+
+            this.start = function(word, translate)
+            {
+                if ($('#' + blockId).length)
+                    return false;
+                var row = getRow(blockId);
+                var col6_1 = getCol(6);
+                var col6_2 = getCol(6);
+
+                row.append(col6_1.html(word));
+                row.append(col6_2.html(translate));
+
+                $('.start-page').after(row);
+
+                index = setInterval(this.changeColors, interval);
+
+                $($('#' + blockId)).click(function(){
+                    clearInterval(index);
+                    $($('#' + blockId)).remove();
+                })
+            }
+        }
+
+        $(function(){
+            $("img.lazy").lazyload({
+                skip_invisible : true
+            });
+
+            $('.get-rus-translation').click(function() {
+                var __this = $(this);
+                var parent = __this.parent();
+
+                var book = parent.attr('book');
+                var location = parent.attr('location');
+
+
+                $.ajax({
+                    url: '/get-rus-bible-translation/',
+                    data: {book:book, location:location},
+                    type: 'post',
+                    error: function(XMLHttpRequest, textStatus, errorThrown){
+                        if (XMLHttpRequest.status == 404) {
+                            alert('Translation is unable now, please try again latter!');
+                        }
+                    },
+                    success: function(data){
+                        var dataDiv = $('<div/>', {class:'ru-translation'});
+                        dataDiv.html(data);
+                        dataDiv.append($('<hr/>', {}));
+
+                        parent.next().find('hr').remove();
+
+                        parent.next().append(dataDiv);
+                        __this.remove();
+                    }
+                });
+            })
+
+            $('#add-user-words').submit(function(event){
+                event.preventDefault();
+
+                form = $(this);
+
+                data = form.serialize();
+
+                target = $('#user-texts-added');
+
+                $.ajax({
+                    url: '/set-user-text/',
+                    data: data,
+                    type: 'post',
+                    error: function(XMLHttpRequest, textStatus, errorThrown){
+                        if (XMLHttpRequest.status == 403) {
+                            alert('Forbidden!');
+                        }
+                    },
+                    success: function(data){
+                        if (!target.length) {
+                            location.reload();
+                        }
+
+                        row = $('<div/>', {
+                            'class' : 'row'
+                        });
+                        row.append($('<div/>', {
+                            'class':'col-md-6'
+                        }).html(data.text));
+
+                        row.append($('<div/>', {
+                            'class':'col-md-6'
+                        }).html(data.trans));
+
+                        target.append(row);
+
+                        form.find('textarea').val('');
+                    }
+                });
+
+                return false;
+            });
+
+            var possibleCount = 4;
+            var i = 0;
+            $('.images-same a').each(function(index){
+                if (i > possibleCount) {
+                    $(this).addClass('hide');
+                }
+                i++;
+            })
+
+            $('#showmore-images').click(function(){
+                $('#showmore-images').remove();
+                $('.images-same a').removeClass('hide');
+            });
+
+            {% if current is not empty %}
+            var learnItInstance = new LearnIt();
+
+            $('#learn-btn').click(function(){
+                learnItInstance.start('{{ current.word }}', '{{ current.translate }}');
+            });
+            {% endif %}
+        })
+
+
+
+    </script>
+
+{% endblock %}

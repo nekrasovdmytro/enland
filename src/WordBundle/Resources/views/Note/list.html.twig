@@ -1,0 +1,109 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ seo.getTitle() }}{% endblock %}
+{% block description %}{{ seo.getDescription() }}{% endblock %}
+{% block keywords %}{{ seo.getKeywords() }}{% endblock %}
+
+{% block stylesheets %}
+    {% stylesheets '@WordBundle/Resources/public/css/*' filter='cssrewrite' %}
+    <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock %}
+
+{% block body %}
+
+    <div class="row">
+        <div class="col-md-10">
+            <h1>
+                {% if category %}
+                    {{ categories[category].getName() }}
+                {% else %}
+                    {% trans %}All articles{% endtrans %}
+                {% endif %}
+            </h1>
+        </div>
+        <div class="col-md-2">
+            <a href="/add-notice" type="button" class="btn btn-danger pull-right">{% trans %}Add notice{% endtrans %}</a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <hr>
+            <a href="/notice" type="button" class="btn btn-{% if category == 0 %}default{% else %}info{% endif %}">All</a>
+            {% for c in categories %}
+                <a href="/notice?category={{ c.id }}" type="button" class="btn btn-{% if category == c.id  %}default{% else %}info{% endif %}">{{ c.name }}</a>
+            {% endfor %}
+            <hr>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-9 notices">
+
+            <div class="row">
+                {% for notice in notices %}
+                <div class="col-md-3">
+                    {% include 'WordBundle:Note:notices.html.twig' with {'notice': notice} %}
+                </div>
+                {% endfor %}
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    {% include 'WordBundle:Note:pagination.html.twig' with {'page': page, 'pages':pages, 'category':category} %}
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-3">
+            <div class="row">
+                <div class="col-md-12">
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- advarts -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:250px"
+     data-ad-client="ca-pub-6448372095392587"
+     data-ad-slot="1690403355"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <hr>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 header-line">
+                    {% trans %}Additional words{% endtrans %}
+                </div>
+            </div>
+            <div class="row">
+                {% for w in words %}
+                    <div class="col-md-6">
+                        <a href="/word/{{ w.translate | lower | replace({' ' : '_'}) }}">{{ w.translate | capitalize }}</a>
+
+                        {{ w.transcription | raw }}
+
+                        - {{ w.word | lower }}
+
+
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+
+<script>
+    $(function(){
+        $('.list-img').hover(function(){
+            $(this).stop(1,1).animate({'opacity':0.6}, 300);
+        }, function(){
+            $(this).stop(1,1).animate({'opacity':1}, 300);
+        })
+    })
+</script>
+{% endblock %}

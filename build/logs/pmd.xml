@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pmd version="@project.version@" timestamp="2015-12-29T17:20:13+02:00">
+  <file name="/var/www/project/app/SymfonyRequirements.php">
+    <violation beginline="131" endline="161" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="PhpIniRequirement" method="__construct" priority="3">
+      The method __construct() has a Cyclomatic Complexity of 11. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="384" endline="739" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="SymfonyRequirements" method="__construct" priority="3">
+      The method __construct() has a Cyclomatic Complexity of 35. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="384" endline="739" rule="NPathComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#npathcomplexity" class="SymfonyRequirements" method="__construct" priority="3">
+      The method __construct() has an NPath complexity of 6912000. The configured NPath complexity threshold is 200.
+    </violation>
+    <violation beginline="384" endline="739" rule="ExcessiveMethodLength" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#excessivemethodlength" class="SymfonyRequirements" method="__construct" priority="3">
+      The method __construct() has 356 lines of code. Current threshold is set to 100. Avoid really long methods.
+    </violation>
+    <violation beginline="555" endline="555" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $r. Configured minimum length is 3.
+    </violation>
+  </file>
+  <file name="/var/www/project/app/cache/dev/appDevDebugProjectContainer.php">
+    <violation beginline="17" endline="4308" rule="ExcessiveClassLength" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#excessiveclasslength" class="appDevDebugProjectContainer" priority="3">
+      The class appDevDebugProjectContainer has 4292 lines of code. Current threshold is 1000. Avoid really long classes.
+    </violation>
+    <violation beginline="17" endline="4308" rule="ExcessiveClassComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#excessiveclasscomplexity" class="appDevDebugProjectContainer" priority="3">
+      The class appDevDebugProjectContainer has an overall complexity of 236 which is very high. The configured complexity threshold is 50.
+    </violation>
+    <violation beginline="25" endline="276" rule="ExcessiveMethodLength" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#excessivemethodlength" class="appDevDebugProjectContainer" method="__construct" priority="3">
+      The method __construct() has 252 lines of code. Current threshold is set to 100. Avoid really long methods.
+    </violation>
+    <violation beginline="309" endline="309" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $a. Configured minimum length is 3.
+    </violation>
+    <violation beginline="433" endline="433" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $a. Configured minimum length is 3.
+    </violation>
+    <violation beginline="434" endline="434" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $b. Configured minimum length is 3.
+    </violation>
+    <violation beginline="436" endline="436" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $c. Configured minimum length is 3.
+    </violation>
+    <violation beginline="662" endline="662" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $a. Configured minimum length is 3.
+    </violation>
+    <violation beginline="666" endline="666" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $b. Configured minimum length is 3.
+    </violation>
+    <violation beginline="669" endline="669" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $c. Configured minimum length is 3.
+    </violation>
+    <violation beginline="698" endline="698" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $a. Configured minimum length is 3.
+    </violation>
+    <violation beginline="701" endline="701" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $b. Configured minimum length is 3.
+    </violation>
+    <violation beginline="704" endline="704" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $c. Configured minimum length is 3.
+    </violation>
+    <violation beginline="1856" endline="1856" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $a. Configured minimum length is 3.
+    </violation>
+    <violation beginline="1857" endline="1857" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $b. Configured minimum length is 3.
+    </violation>
+    <violation beginline="1859" endline="1859" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $c. Configured minimum length is 3.
+    </violation>
+    <violation beginline="1862" endline="1862" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $d. Configured minimum length is 3.
+    </violation>
+    <violation beginline="2000" endline="2000" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $a. Configured minimum length is 3.
+    </violation>
+    <violation beginline="2001" endline="2001" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $b. Configured minimum length is 3.
+    </violation>
+    <violation beginline="2003" endline="2003" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $c. Configured minimum length is 3.
+    </violation>
+    <violation beginline="2005" endline="2005" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $d. Configured minimum length is 3.
+    </violation>
+    <violation beginline="2137" endline="2137" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $a. Configured minimum length is 3.
+    </violation>
+    <violation beginline="2138" endline="2138" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $b. Configured minimum length is 3.
+    </violation>
+    <violation beginline="2139" endline="2139" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $c. Configured minimum length is 3.
+    </violation>
+    <violation beginline="2140" endline="2140" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $d. Configured minimum length is 3.
+    </violation>
+    <violation beginline="2142" endline="2142" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $e. Configured minimum length is 3.
+    </violation>
+    <violation beginline="2560" endline="2560" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $a. Configured minimum length is 3.
+    </violation>
+    <violation beginline="2851" endline="2851" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $a. Configured minimum length is 3.
+    </violation>
+    <violation beginline="3094" endline="3094" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $a. Configured minimum length is 3.
+    </violation>
+    <violation beginline="3095" endline="3095" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $b. Configured minimum length is 3.
+    </violation>
+    <violation beginline="3096" endline="3096" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $c. Configured minimum length is 3.
+    </violation>
+    <violation beginline="3098" endline="3098" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $d. Configured minimum length is 3.
+    </violation>
+    <violation beginline="3100" endline="3100" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $e. Configured minimum length is 3.
+    </violation>
+    <violation beginline="3473" endline="3473" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $a. Configured minimum length is 3.
+    </violation>
+    <violation beginline="3654" endline="4307" rule="ExcessiveMethodLength" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#excessivemethodlength" class="appDevDebugProjectContainer" method="getDefaultParameters" priority="3">
+      The method getDefaultParameters() has 654 lines of code. Current threshold is set to 100. Avoid really long methods.
+    </violation>
+  </file>
+  <file name="/var/www/project/app/cache/test/appTestDebugProjectContainer.php">
+    <violation beginline="17" endline="4333" rule="ExcessiveClassLength" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#excessiveclasslength" class="appTestDebugProjectContainer" priority="3">
+      The class appTestDebugProjectContainer has 4317 lines of code. Current threshold is 1000. Avoid really long classes.
+    </violation>
+    <violation beginline="17" endline="4333" rule="ExcessiveClassComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#excessiveclasscomplexity" class="appTestDebugProjectContainer" priority="3">
+      The class appTestDebugProjectContainer has an overall complexity of 239 which is very high. The configured complexity threshold is 50.
+    </violation>
+    <violation beginline="25" endline="279" rule="ExcessiveMethodLength" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#excessivemethodlength" class="appTestDebugProjectContainer" method="__construct" priority="3">
+      The method __construct() has 255 lines of code. Current threshold is set to 100. Avoid really long methods.
+    </violation>
+    <violation beginline="312" endline="312" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $a. Configured minimum length is 3.
+    </violation>
+    <violation beginline="436" endline="436" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $a. Configured minimum length is 3.
+    </violation>
+    <violation beginline="437" endline="437" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $b. Configured minimum length is 3.
+    </violation>
+    <violation beginline="439" endline="439" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $c. Configured minimum length is 3.
+    </violation>
+    <violation beginline="665" endline="665" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $a. Configured minimum length is 3.
+    </violation>
+    <violation beginline="669" endline="669" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $b. Configured minimum length is 3.
+    </violation>
+    <violation beginline="672" endline="672" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $c. Configured minimum length is 3.
+    </violation>
+    <violation beginline="701" endline="701" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $a. Configured minimum length is 3.
+    </violation>
+    <violation beginline="704" endline="704" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $b. Configured minimum length is 3.
+    </violation>
+    <violation beginline="707" endline="707" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $c. Configured minimum length is 3.
+    </violation>
+    <violation beginline="1859" endline="1859" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $a. Configured minimum length is 3.
+    </violation>
+    <violation beginline="1860" endline="1860" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $b. Configured minimum length is 3.
+    </violation>
+    <violation beginline="1862" endline="1862" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $c. Configured minimum length is 3.
+    </violation>
+    <violation beginline="1865" endline="1865" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $d. Configured minimum length is 3.
+    </violation>
+    <violation beginline="2004" endline="2004" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $a. Configured minimum length is 3.
+    </violation>
+    <violation beginline="2005" endline="2005" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $b. Configured minimum length is 3.
+    </violation>
+    <violation beginline="2007" endline="2007" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $c. Configured minimum length is 3.
+    </violation>
+    <violation beginline="2009" endline="2009" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $d. Configured minimum length is 3.
+    </violation>
+    <violation beginline="2141" endline="2141" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $a. Configured minimum length is 3.
+    </violation>
+    <violation beginline="2142" endline="2142" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $b. Configured minimum length is 3.
+    </violation>
+    <violation beginline="2143" endline="2143" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $c. Configured minimum length is 3.
+    </violation>
+    <violation beginline="2144" endline="2144" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $d. Configured minimum length is 3.
+    </violation>
+    <violation beginline="2146" endline="2146" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $e. Configured minimum length is 3.
+    </violation>
+    <violation beginline="2885" endline="2885" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $a. Configured minimum length is 3.
+    </violation>
+    <violation beginline="3128" endline="3128" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $a. Configured minimum length is 3.
+    </violation>
+    <violation beginline="3129" endline="3129" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $b. Configured minimum length is 3.
+    </violation>
+    <violation beginline="3130" endline="3130" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $c. Configured minimum length is 3.
+    </violation>
+    <violation beginline="3132" endline="3132" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $d. Configured minimum length is 3.
+    </violation>
+    <violation beginline="3134" endline="3134" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $e. Configured minimum length is 3.
+    </violation>
+    <violation beginline="3494" endline="3494" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $a. Configured minimum length is 3.
+    </violation>
+    <violation beginline="3675" endline="4332" rule="ExcessiveMethodLength" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#excessivemethodlength" class="appTestDebugProjectContainer" method="getDefaultParameters" priority="3">
+      The method getDefaultParameters() has 658 lines of code. Current threshold is set to 100. Avoid really long methods.
+    </violation>
+  </file>
+  <file name="/var/www/project/app/cache/test/appTestUrlMatcher.php">
+    <violation beginline="23" endline="188" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="appTestUrlMatcher" method="match" priority="3">
+      The method match() has a Cyclomatic Complexity of 43. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="23" endline="188" rule="NPathComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#npathcomplexity" class="appTestUrlMatcher" method="match" priority="3">
+      The method match() has an NPath complexity of 11549587500. The configured NPath complexity threshold is 200.
+    </violation>
+    <violation beginline="23" endline="188" rule="ExcessiveMethodLength" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#excessivemethodlength" class="appTestUrlMatcher" method="match" priority="3">
+      The method match() has 166 lines of code. Current threshold is set to 100. Avoid really long methods.
+    </violation>
+    <violation beginline="27" endline="27" rule="UnusedLocalVariable" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedlocalvariable" priority="3">
+      Avoid unused local variables such as '$context'.
+    </violation>
+    <violation beginline="28" endline="28" rule="UnusedLocalVariable" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedlocalvariable" priority="3">
+      Avoid unused local variables such as '$request'.
+    </violation>
+  </file>
+  <file name="/var/www/project/app/cache/test/twig/39/397730d68f22d9ba087ed150efe42d86ddd5b296c24246d4ec23dc4f2a1663fe.php">
+    <violation beginline="22" endline="22" rule="LongVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#longvariable" priority="3">
+      Avoid excessively long variable names like $__internal_83624854c65794a48deef327597664d3b51b0af77d9718c9bfb625dff811c86d. Keep variable name length under 20.
+    </violation>
+    <violation beginline="98" endline="98" rule="UnusedFormalParameter" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedformalparameter" priority="3">
+      Avoid unused parameters such as '$context'.
+    </violation>
+    <violation beginline="98" endline="98" rule="UnusedFormalParameter" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedformalparameter" priority="3">
+      Avoid unused parameters such as '$blocks'.
+    </violation>
+    <violation beginline="100" endline="100" rule="LongVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#longvariable" priority="3">
+      Avoid excessively long variable names like $__internal_33e9d7a8e702fb32e0c5cb2e73a1e230828b8d9f4184e597f1d301b40774507a. Keep variable name length under 20.
+    </violation>
+    <violation beginline="110" endline="110" rule="UnusedFormalParameter" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedformalparameter" priority="3">
+      Avoid unused parameters such as '$context'.
+    </violation>
+    <violation beginline="110" endline="110" rule="UnusedFormalParameter" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedformalparameter" priority="3">
+      Avoid unused parameters such as '$blocks'.
+    </violation>
+    <violation beginline="112" endline="112" rule="LongVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#longvariable" priority="3">
+      Avoid excessively long variable names like $__internal_d44683f3415075007b29a826f38681cf43e05aec7a9eeff67786264e88c6b516. Keep variable name length under 20.
+    </violation>
+    <violation beginline="121" endline="121" rule="UnusedFormalParameter" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedformalparameter" priority="3">
+      Avoid unused parameters such as '$context'.
+    </violation>
+    <violation beginline="121" endline="121" rule="UnusedFormalParameter" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedformalparameter" priority="3">
+      Avoid unused parameters such as '$blocks'.
+    </violation>
+    <violation beginline="123" endline="123" rule="LongVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#longvariable" priority="3">
+      Avoid excessively long variable names like $__internal_d3dec71b14a6d8ad6f2ee83f471bd5e5173ec956c9a74e4e56a79747894d84f4. Keep variable name length under 20.
+    </violation>
+    <violation beginline="134" endline="134" rule="UnusedFormalParameter" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedformalparameter" priority="3">
+      Avoid unused parameters such as '$context'.
+    </violation>
+    <violation beginline="134" endline="134" rule="UnusedFormalParameter" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedformalparameter" priority="3">
+      Avoid unused parameters such as '$blocks'.
+    </violation>
+    <violation beginline="136" endline="136" rule="LongVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#longvariable" priority="3">
+      Avoid excessively long variable names like $__internal_1195f305d048ff3c9845d14774c54d0cb1992a84ec1291b786e6f40fe0db9d93. Keep variable name length under 20.
+    </violation>
+  </file>
+  <file name="/var/www/project/app/cache/test/twig/51/51ac891f7d6451a9822d0fcbcdbf594e2df01a12efc07b22067cd3193ee32d0c.php">
+    <violation beginline="17" endline="17" rule="UnusedFormalParameter" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedformalparameter" priority="3">
+      Avoid unused parameters such as '$context'.
+    </violation>
+    <violation beginline="24" endline="24" rule="LongVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#longvariable" priority="3">
+      Avoid excessively long variable names like $__internal_1ec6dc58fec0f618cd24d6e33d7ae83d04071069ad64be85749d60d47f024c54. Keep variable name length under 20.
+    </violation>
+    <violation beginline="34" endline="119" rule="NPathComplexity" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#npathcomplexity" class="__TwigTemplate_b6f3b690aad195fda7c7d5a1e9077adc49f024dd9879e42c947a77f23eddca2c" method="block_body" priority="3">
+      The method block_body() has an NPath complexity of 300. The configured NPath complexity threshold is 200.
+    </violation>
+    <violation beginline="34" endline="34" rule="UnusedFormalParameter" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedformalparameter" priority="3">
+      Avoid unused parameters such as '$blocks'.
+    </violation>
+    <violation beginline="36" endline="36" rule="LongVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#longvariable" priority="3">
+      Avoid excessively long variable names like $__internal_6850cff079e6c50a103b8620e38ec49c79e85dc142e8dfb1080c387d66cc6709. Keep variable name length under 20.
+    </violation>
+  </file>
+</pmd>

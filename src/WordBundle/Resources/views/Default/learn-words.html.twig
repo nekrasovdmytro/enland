@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Интерактивное изучение английских слов онлайн - бесплатно{% endblock %}
+{% block description %}Английские слова это основа английского языка. Даже если вы не знаете хорошо граматику но знаете слова
+граматика это лишь технический вопрос и его легко решить. Интерактивное изучение слов это не стандартный, провернный опыт
+который поможет вам естественно выучить нужные вам слова.{% endblock %}
+{% block keywords %}Изучение английских слов, английские слова в игровой форме, интерактивное изучение слов{% endblock %}
+
+
+{% block stylesheets %}
+    {% stylesheets '@WordBundle/Resources/public/css/*' filter='cssrewrite' %}
+    <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock %}
+
+{% block body %}
+    <div class="row">
+        {% set i = 0 %}
+        {% for w in words %}
+            <div class="col-md-3 image-block">
+                <div>
+                    <a href="/word/{{ w.translate | lower | replace({' ' : '_'}) }}"><img alt="{{ w.translate | capitalize }}" class="image-tag" src="http://learn.lviniy-web.org/Upload/{{ w.image }}" /></a>
+                </div>
+                <a  class="caption" href="/word/{{ w.translate | lower | replace({' ' : '_'}) }}">{{ w.translate | capitalize }}</a>
+
+                <br/><br>
+                {{ w.transcription | raw }}
+
+                 {{ w.word | lower }}
+                <br><br>
+
+            </div>
+            {% set i = i + 1 %}
+        {% endfor %}
+        <center><button onclick="location.reload()"  class="btn btn-info">More words</button></center>
+        <style>
+            .image-tag{
+                border: 7px solid #f6546a;
+                border-radius: 10px;
+
+            }
+            .caption{
+                padding:10px;
+                background:#cccccc;
+                font-size: 20px;
+            }
+        </style>
+    </div>
+{% endblock %}
+
+

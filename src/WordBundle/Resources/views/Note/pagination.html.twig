@@ -1,0 +1,11 @@
+{% if pages %}
+<nav>
+    <ul class="pagination">
+        {% for p in range(0,pages) %}
+        <li {% if page == p %}class="active"{% endif %} >
+            <a href="{{ url }}{% if p %}{% if category %}&p={{ p }}{% else %}?p={{ p }}{% endif %}{% endif %}">{{ p }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</nav>
+{% endif %}

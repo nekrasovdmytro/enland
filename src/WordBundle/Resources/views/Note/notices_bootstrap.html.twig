@@ -1,0 +1,23 @@
+
+{% for n in notice %}
+    <div class="col-md-{{ col }}">
+        <a href="/n/{{ n.url }}">
+            <img title="{{ n.header }}" class="img-responsive img-rounded list-img" alt="{{ n.header }}" src="/uploads/{{ n.image }}">
+        </a>
+
+        <div class="row">
+            <div class="col-md-12"><hr></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8"><a href="/n/{{ n.url }}">{{ n.header }}</a></div>
+            <div class="col-md-4 text-right"><a href="/notice?category={{ n.categoryId }}" class="label label-default">{{ categories[n.categoryId].getName() }}</a></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="little-underline"></div>
+            </div>
+        </div>
+    </div>
+{% endfor %}
