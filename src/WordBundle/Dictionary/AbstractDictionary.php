@@ -37,10 +37,10 @@ abstract class AbstractDictionary
     {
         $lang = is_null($lang) ? static::LANG : $lang;
 
-        $params = ['lang' => $lang, 'alp' => $alp . '%'];
+        $params = ['lang' => $lang, 'alp' => $alp . '%', 'notlike' => '% %', 'notlike2' => '%.%'];
 
         $result = $this->getListQuery($params, $count, $offset)
-            ->where("w.lang = :lang and w.translate LIKE :alp")
+            ->where("w.lang = :lang and w.translate LIKE :alp and w.translate NOT LIKE :notlike and w.translate NOT LIKE :notlike2 and length(w.translate) > 1")
             ->getQuery()
             ->getArrayResult();
 
@@ -62,6 +62,26 @@ abstract class AbstractDictionary
         }
 
         return $query;
+    }
+
+    public function getRandWords($limit = 30)
+    {
+        $em = $this->container->get('doctrine')->getEntityManager();
+        $connection = $em->getConnection();
+
+        $statement = $connection->prepare("
+            SELECT *
+            FROM words
+            WHERE lang = :lang AND image <> '' and word NOT LIKE '% %'
+            ORDER BY RAND() LIMIT :limit
+        ");
+        $statement->bindValue('limit', $limit, \PDO::PARAM_INT);
+        $statement->bindValue('lang', static::LANG);
+        $statement->execute();
+
+        $results = $statement->fetchAll();
+
+        return $results;
     }
 
     public function getWordInfo($word)

@@ -87,7 +87,7 @@ class NoteController extends Controller
 
         $dictionary = new EnglishDictionary($this->container);
 
-        $words = $dictionary->getListWords(30, mt_rand(0,EnglishDictionary::MAX_WORDS - 30));
+        $words = $dictionary->getRandWords();
 
         $anotherFn = $fnRepo->findBy([], ['header' => 'ASC'], $limit, $offset);
 

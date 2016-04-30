@@ -27,11 +27,8 @@ class DefaultController extends Controller
     {
         $noticeBase = new BaseNotice($this->container);
         $dictionary = new EnglishDictionary($this->container);
-
-        $limit = 30;
-        $offset = mt_rand(0, EnglishDictionary::MAX_WORDS - $limit);
-
-        $words = $dictionary->getListWords($limit, $offset);
+        
+        $words = $dictionary->getRandWords();
 
         $alphabet = $dictionary->getAlphabet();
 
