@@ -47,7 +47,8 @@ class NoteController extends Controller
             $fastnotice->setHeader($request->get('header'));
             !empty($name) && $fastnotice->setImage($name);
             $fastnotice->setCategoryId($request->get('category_id'));
-            $fastnotice->setUrl(DictionaryTools::translitUrl($request->get('header')));
+
+            $fastnotice->setUrl(time() .'-'. DictionaryTools::translitUrl($request->get('header')));
 
             $noticeManager->persist($fastnotice);
 
