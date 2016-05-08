@@ -4,6 +4,10 @@
     {% javascripts '@WordBundle/Resources/public/js/*/*/*.js' %}
     <script src="{{ asset_url }}"></script>
     {% endjavascripts %}
+
+    {% javascripts '@WordBundle/Resources/public/js/talk/*.js' %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
 {% endblock %}
 
 {% block stylesheets %}
@@ -35,11 +39,14 @@
             <div class="row">
             {% for w in words %}
                 <div class="col-md-3 page-list">
-                <a class="list-word" image="{{ w.image }}" href="/word/{{ w.translate | lower | replace({' ' : '_'}) }}">{{ w.translate | capitalize }}</a>
+
+                    <a class="list-word" image="{{ w.image }}" href="/word/{{ w.translate | lower | replace({' ' : '_'}) }}">{{ w.translate | capitalize }}</a>
 
                     {{ w.transcription | raw }}
 
                     - {{ w.word | lower }}
+
+                    <span style="cursor:pointer; position: relative; top:4px;" class="glyphicon glyphicon-volume-up talk" text="{{ w.translate | capitalize }}" aria-hidden="true"></span>
 
                     <a style="font-size:10px" onclick='var newWin = window.open("https://translate.google.com/#en/ru/{{ w.translate | lower }}",
                             "JSSite",
@@ -49,6 +56,7 @@
                             newWin.focus()
                             ' id="gtranslate-btn" type="button" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></a>
 
+
                 </div>
             {% endfor %}
             </div>
@@ -56,7 +64,7 @@
     </div>
     <div class="row">
         <div class="col-md-10">
-
+        <!--<iframe src="/mp3/655549fcf09f8443d789424e001ec753.mp3"></iframe>-->
         </div>
         <div class="col-md-2">
             <br>
