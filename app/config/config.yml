@@ -3,12 +3,15 @@ imports:
     - { resource: security.yml }
     - { resource: services.yml }
     - { resource: "@WordBundle/Resources/config/services.yml" }
+    - { resource: "@TalkBundle/Resources/config/services.yml" }
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 
 parameters:
     locale: ru
+    espeak_text_file_path: "%kernel.root_dir%/tmp/"
+    espeak_mp3_path: "%kernel.root_dir%/../web/mp3/"
 
 framework:
     #esi:             ~
