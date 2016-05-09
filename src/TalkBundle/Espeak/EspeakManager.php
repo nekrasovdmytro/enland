@@ -52,7 +52,7 @@ class EspeakManager
         $filePathMp3 = $this->eSpeakMp3->getFilePath();
 
         //execute mp3 by this file with text
-        exec("sudo espeak -f {$filePath} --stdout | sudo ffmpeg -i - -ar 44100 -ac 2 -ab 192k -f mp3 {$filePathMp3}", $output, $return);
+        exec("espeak -f {$filePath} --stdout | ffmpeg -i - -ar 44100 -ac 2 -ab 192k -f mp3 {$filePathMp3}", $output, $return);
 
         //remove tmp text file
         $this->espeakTextFile->removeFile();

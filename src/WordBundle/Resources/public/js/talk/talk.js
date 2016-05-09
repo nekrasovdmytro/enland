@@ -26,7 +26,7 @@ $(function(){
 
         var request = $.ajax({
                 method: "POST",
-                url: "/app_dev.php/talk/add",
+                url: "/talk/add",
                 data: JSON.stringify(data),
                 contentType: "application/json",
         });
