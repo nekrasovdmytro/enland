@@ -12,6 +12,7 @@ parameters:
     locale: ru
     espeak_text_file_path: "%kernel.root_dir%/tmp/"
     espeak_mp3_path: "%kernel.root_dir%/../web/mp3/"
+    festival_mp3_path: "%kernel.root_dir%/../web/mp3/"
 
 framework:
     #esi:             ~

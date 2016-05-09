@@ -14,3 +14,7 @@ services:
   espeak.manager:
       class: TalkBundle\Espeak\EspeakManager
       arguments: ["@espeak.text.file", "@espeak.mp3"]
+
+  festival.manager:
+      class: TalkBundle\Festival\FestivalManager
+      arguments: ["@service_container"]
